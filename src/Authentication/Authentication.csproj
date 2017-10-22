@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Ievgen Galamai</Authors>
+    <Company>Ievgen Galamai</Company>
+    <Description>ASP.NET Core 2.0 Authentication</Description>
+    <Copyright>Ievgen Galamai</Copyright>
+    <PackageProjectUrl>https://github.com/galamai/Authentication</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/galamai/Authentication</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/galamai/Authentication/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageId>Galamai.Authentication</PackageId>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <FileVersion>0.0.1.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>
