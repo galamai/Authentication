@@ -81,6 +81,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IClaimsPrincipalFactory, ClaimsPrincipalFactory>();
             services.AddScoped<ISecurityStampValidator, SecurityStampValidator>();
             services.AddScoped<ITokenProviderManager, TokenProviderManager>();
+            services.AddScoped<ISignInFactory, SignInFactory>();
             services.AddScoped<ISignInManager, SignInManager>();
 
             return services;

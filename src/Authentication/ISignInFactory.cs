@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Authentication.Interfaces
+namespace Authentication
 {
     public interface ISignInFactory
     {

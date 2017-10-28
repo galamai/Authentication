@@ -204,9 +204,9 @@ namespace Authentication
             };
         }
 
-        public virtual async Task SignOutAsync()
+        public virtual Task SignOutAsync()
         {
-            await Task.WhenAll(
+            return Task.WhenAll(
                 _contextAccessor.HttpContext.SignOutAsync(SignInConstants.ApplicationScheme),
                 _contextAccessor.HttpContext.SignOutAsync(SignInConstants.ExternalScheme),
                 _contextAccessor.HttpContext.SignOutAsync(SignInConstants.TwoFactorUserIdScheme));
@@ -252,11 +252,11 @@ namespace Authentication
 
 
 
-        private async Task RememberTwoFactorClientAsync(string id)
+        private Task RememberTwoFactorClientAsync(string id)
         {
             var rememberBrowserIdentity = new ClaimsIdentity(SignInConstants.TwoFactorRememberMeScheme);
             rememberBrowserIdentity.AddClaim(new Claim(_options.ClaimsIdentityOptions.IdClaimType, id));
-            await _contextAccessor.HttpContext.SignInAsync(
+            return _contextAccessor.HttpContext.SignInAsync(
                 SignInConstants.TwoFactorRememberMeScheme,
                 new ClaimsPrincipal(rememberBrowserIdentity),
                 new AuthenticationProperties { IsPersistent = true });
